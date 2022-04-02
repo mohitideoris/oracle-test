@@ -30,11 +30,6 @@ public class DataEntityStoreImpl implements DataEntityStore {
     }
 
     @Override
-    public Collection<DataEntity> getAll() {
-        return dataEntities;
-    }
-
-    @Override
     public Collection<String> uniqueGeozone() {
         return Collections.unmodifiableCollection(uniqueGeozones);
     }

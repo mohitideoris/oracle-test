@@ -30,14 +30,21 @@ public class AppRunner {
         EventHandlerProvider.register(new ContractDataEntityEventHandler(contractStore));
     }
 
-    public void run() throws IllegalAccessException, InstantiationException {
+    // Used in test
+    AppRunner(GeoZoneStore geoZoneStore, ContractStore contractStore, DataProvider dataProvider) {
+        this.geoZoneStore = geoZoneStore;
+        this.contractStore = contractStore;
+        this.dataProvider = dataProvider;
+    }
+
+    public void run() {
         System.out.println("Running application");
 
         // Run with default context
         run(AppRunnerContext.defaultContext());
     }
 
-    public void run(AppRunnerContext context) throws InstantiationException, IllegalAccessException {
+    public void run(AppRunnerContext context) {
         System.out.println("Running application");
 
         // Process each line and get Data entityr
